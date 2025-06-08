@@ -1,20 +1,12 @@
 package com.app.ecom;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class UserService {
-    private List<User> userList = new ArrayList<>();
+public interface UserService{
+    public List<User> fetchAllUsers();
+    public List<User> addUser(User user);
 
-    public List<User> fetchAllUsers() {
-        return userList;
-    }
+    User fetchUser(Long id);
 
-    public List<User> addUser(User user) {
-        userList.add(user);
-        return userList;
-    }
+    Boolean updateUser(Long id, User updatedUser);
 }
