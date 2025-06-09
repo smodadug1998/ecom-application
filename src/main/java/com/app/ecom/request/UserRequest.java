@@ -1,5 +1,6 @@
-package com.app.ecom.dto;
+package com.app.ecom.request;
 
+import com.app.ecom.dto.AddressDTO;
 import lombok.Data;
 
 @Data

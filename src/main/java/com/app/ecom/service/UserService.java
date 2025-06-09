@@ -1,7 +1,7 @@
 package com.app.ecom.service;
 
-import com.app.ecom.dto.UserRequest;
-import com.app.ecom.dto.UserResponse;
+import com.app.ecom.request.UserRequest;
+import com.app.ecom.response.UserResponse;
 
 import java.util.List;
 import java.util.Optional;

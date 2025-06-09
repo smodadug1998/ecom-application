@@ -1,5 +1,6 @@
-package com.app.ecom.dto;
+package com.app.ecom.response;
 
+import com.app.ecom.dto.AddressDTO;
 import com.app.ecom.model.UserRole;
 import lombok.Data;
 
