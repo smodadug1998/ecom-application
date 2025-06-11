@@ -1,11 +1,11 @@
 package com.app.ecom.serviceImpl;
 
-import com.app.ecom.Repo.CartItemRepo;
-import com.app.ecom.Repo.ProductRepo;
-import com.app.ecom.Repo.UserRepo;
 import com.app.ecom.model.CartItem;
 import com.app.ecom.model.Product;
 import com.app.ecom.model.User;
+import com.app.ecom.repo.CartItemRepo;
+import com.app.ecom.repo.ProductRepo;
+import com.app.ecom.repo.UserRepo;
 import com.app.ecom.request.CartItemRequest;
 import com.app.ecom.service.CartService;
 import jakarta.transaction.Transactional;
@@ -60,7 +60,7 @@ public class CartServiceImpl implements CartService {
 
         Optional<User> userOpt = userRepo.findById(Long.valueOf(userId));
 
-        if(productOpt.isPresent() && userOpt.isPresent()) {
+        if (productOpt.isPresent() && userOpt.isPresent()) {
             cartItemRepo.deleteByUserAndProduct(userOpt.get(), productOpt.get());
             return true;
         }
@@ -72,5 +72,12 @@ public class CartServiceImpl implements CartService {
         return userRepo.findById(Long.valueOf(userId))
                 .map(cartItemRepo::findByUser)
                 .orElseGet(List::of);
+    }
+
+    @Override
+    public void clearCart(String userId) {
+        userRepo.findById(Long.valueOf(userId))
+                .ifPresent(cartItemRepo::deleteByUser
+                );
     }
 }

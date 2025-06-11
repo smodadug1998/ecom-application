@@ -1,7 +1,7 @@
 package com.app.ecom.serviceImpl;
 
-import com.app.ecom.Repo.ProductRepo;
 import com.app.ecom.model.Product;
+import com.app.ecom.repo.ProductRepo;
 import com.app.ecom.request.ProductRequest;
 import com.app.ecom.response.ProductResponse;
 import com.app.ecom.service.ProductService;
@@ -16,10 +16,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepo productRepo;
+
     @Override
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = new Product();
-        updateProductFromRequest(product,productRequest);
+        updateProductFromRequest(product, productRequest);
         Product savedProduct = productRepo.save(product);
         return mapToProductResponse(savedProduct);
     }
@@ -28,7 +29,7 @@ public class ProductServiceImpl implements ProductService {
     public Optional<ProductResponse> updateProduct(Long productId, ProductRequest productRequest) {
         return productRepo.findById(productId)
                 .map(existingProduct -> {
-                    updateProductFromRequest(existingProduct,productRequest);
+                    updateProductFromRequest(existingProduct, productRequest);
                     Product savedProduct = productRepo.save(existingProduct);
                     return mapToProductResponse(savedProduct);
                 });

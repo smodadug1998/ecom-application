@@ -1,4 +1,4 @@
-package com.app.ecom.model;
+package com.app.ecom.enums;
 
 public enum UserRole {
     CUSTOMER,

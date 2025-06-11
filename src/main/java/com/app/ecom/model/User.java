@@ -1,5 +1,6 @@
 package com.app.ecom.model;
 
+import com.app.ecom.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

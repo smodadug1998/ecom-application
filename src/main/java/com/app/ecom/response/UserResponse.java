@@ -1,7 +1,7 @@
 package com.app.ecom.response;
 
 import com.app.ecom.dto.AddressDTO;
-import com.app.ecom.model.UserRole;
+import com.app.ecom.enums.UserRole;
 import lombok.Data;
 
 @Data

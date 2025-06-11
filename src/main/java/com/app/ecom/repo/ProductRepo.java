@@ -1,7 +1,6 @@
-package com.app.ecom.Repo;
+package com.app.ecom.repo;
 
 import com.app.ecom.model.Product;
-import com.app.ecom.response.ProductResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
