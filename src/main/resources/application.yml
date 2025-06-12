@@ -1,12 +1,38 @@
 spring:
   application:
     name: ecom-application
-  h2:
-    console:
-      enabled: true
   datasource:
-    url: jdbc:h2:mem:test
+    url: jdbc:postgresql://localhost:5432/ecom-db
+    username: sairam
+    password: Rjsa@7790
   jpa:
+    database: postgresql
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: when_authorized
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+server:
+  shutdown: graceful
+
+
+info:
+  app:
+   name: MyNewApp
+   description: App built by us
+   version: 1.0.0
+
+
